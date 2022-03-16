@@ -22,20 +22,46 @@ const LAYOUTS = [
 
 function App() {
 
-  const [selectedLayout, setSelectedLayout] = useState(<LayoutResponsive />)
+  const [selectedLayout, setSelectedLayout] = useState(LAYOUTS[0])
 
   return (
     <div>
-      <div style={{ height: '10vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f1f1f1', width: '100%', overflow: 'scroll', padding: '0 30px' }}>
-        <ul style={{ listStyleType: 'none', display: 'flex', gap: 30, fontSize: 12 }}>
-          {LAYOUTS.map(({ label, component }, k) => <li onClick={() => setSelectedLayout(component)} key={k} style={{ cursor: 'pointer' }}>{label}</li>)}
+      <div style={layoutStyle}>
+        <ul style={ulStyle}>
+          {LAYOUTS.map(({ label }, k) => (
+            <li
+              key={k}
+              onClick={() => setSelectedLayout(LAYOUTS[k])}
+              style={{ cursor: 'pointer', color: selectedLayout.label === label ? '#0d76ff' : '#000' }}
+            >
+              {label}
+            </li>
+          ))}
         </ul>
       </div>
       <div>
-        {selectedLayout}
+        {selectedLayout.component}
       </div>
     </div>
   );
 }
 
 export default App;
+
+const layoutStyle = {
+  height: '10vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: '#f1f1f1',
+  width: '100%',
+  overflow: 'scroll',
+  padding: '0 30px'
+}
+
+const ulStyle = {
+  listStyleType: 'none',
+  display: 'flex',
+  gap: 30,
+  fontSize: 12
+}
