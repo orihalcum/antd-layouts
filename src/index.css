@@ -1,13 +1,72 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import '~antd/dist/antd.css';
+
+.site-layout-background {
+  background: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#layout-header-content-footer,
+#layout-header-sider,
+#layout-header-sider-2,
+#layout-custom-trigger,
+#layout-responsive,
+#layout-fixed-header {
+  height: 90vh;
+}
+
+/* .logo */
+
+.ant-row-rtl .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+#layout-header-content-footer .logo,
+#layout-header-sider .logo,
+#layout-header-sider-2 .logo,
+#layout-fixed-header .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#layout-sider .logo,
+#layout-custom-trigger .logo,
+#layout-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* End of .logo */
+
+
+/* layout-header-content-footer */
+
+#layout-header-content-footer .site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+}
+
+/* layout-custom-trigger  */
+
+#layout-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#layout-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+
+/* layout-responsive */
+
+#layout-responsive .site-layout-sub-header-background {
+  background: #fff;
 }
